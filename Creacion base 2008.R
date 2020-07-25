@@ -11,7 +11,8 @@ library(tidyverse)
 options(survey.lonely.psu="adjust")
 
 #reading the data
-setwd("C:/Users/Erick/Dropbox/GIC/2008")
+
+setwd("C:/Users/Erick/Dropbox/GIC/GITHUB2018/GIC/ENIGH2008")
 Conc<-read.dbf("NCV_Concentrado_2008_concil_2010_DBF.dbf",as.is = T)
 
 #Keeping Variables of interest
