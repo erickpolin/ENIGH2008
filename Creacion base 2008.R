@@ -55,6 +55,35 @@ Conc<-merge(Conc,HogaresIndigenas,by=c("FOLIOVIV","FOLIOHOG"))
 #Let?s create a variable called entidad that contains thos two first digits of the "folioviv" variable
 Conc$entidad<-substr(Conc$FOLIOVIV,1,2)
 
+############vamos a deflactar#################
+entidad<-c("01","02","03","04","05","06","07","08","09",
+           "10","11","12","13","14","15","16","17","18","19","20",
+           "21","22","23","24","25","26","27","28","29","30","31","32")
+
+Deflactores<-c(68.43336412,68.76454756,69.70928971,64.51565837,
+               68.57802593,66.86016389,65.06062721,69.24456993,65.00373277,
+               64.85389685,65.60593852,66.27615338,63.5393076,66.08166233,
+               65.54488752,65.77879561,68.87479907,66.09170991,69.58948826,
+               67.56498193,66.11267629,64.4169399,69.0632509,67.43017227,
+               70.15635311,69.91225279,66.34653907,69.39774369,65.70063392,
+               65.28640849,65.79005286,67.04877517)
+entidades<-c("Aguascalientes","Baja California","Baja California Sur","Campeche","Coahuila de Zaragoza",
+             "Colima","Chiapas","Chihuahua","Ciudad de México","Durango","Guanajuato","Guerrero","Hidalgo",
+             "Jalisco","México","Michoacán de Ocampo","Morelos","Nayarit","Nuevo León","Oaxaca","Puebla",
+             "Querétaro","Quintana Roo","San Luis Potosí","Sinaloa","Sonora","Tabasco","Tamaulipas","Tlaxcala","Veracruz de Ignacio de la Llave","Yucatán","Zacatecas")
+
+Deflactores2008<-data.frame(entidad,entidades,Deflactores)
+
+Conc<-merge(Conc,Deflactores2008,by=c("entidad"))
+
+Conc <- Conc%>%
+  mutate(INGCOR=(INGCOR/Deflactores)*100,INGTRAB=(INGTRAB/Deflactores)*100,TRABAJO=(TRABAJO/Deflactores)*100,
+         NEGOCIO=(NEGOCIO/Deflactores)*100,OTROS_TRAB=(OTROS_TRAB/Deflactores)*100,RENTAS=(RENTAS/Deflactores)*100,
+         UTILIDAD=(UTILIDAD/Deflactores)*100,ARRENDA=(ARRENDA/Deflactores)*100,TRANSFER=(TRANSFER/Deflactores)*100,
+         JUBILA=(JUBILA/Deflactores)*100,BECA=(BECA/Deflactores)*100,DONATIVO=(DONATIVO/Deflactores)*100,
+         REMESA=(REMESA/Deflactores)*100,BENE_GOB=(BENE_GOB/Deflactores)*100,ESP_HOG=(ESP_HOG/Deflactores)*100,
+         ESP_INST=(ESP_INST/Deflactores)*100,ESTI=(ESTI/Deflactores)*100,OTROS=(OTROS/Deflactores)*100)
+
 ######################################################
 
 #apparently this is a "flag", IDK what is this shit yet
