@@ -2,7 +2,7 @@
 ###################  Creacion de la base 2008 #####################
 #################################################################
 
-#ENIGH 2018
+#ENIGH 2008
 library(foreign)
 library(survey)
 library(doBy)
