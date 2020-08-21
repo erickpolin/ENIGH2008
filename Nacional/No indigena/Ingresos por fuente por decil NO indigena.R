@@ -465,9 +465,11 @@ round(c_DECIL_CV,4)*100
 round(c_DECIL_LI)
 round(c_DECIL_LS)
 
+setwd("C:/Users/Erick/Dropbox/GIC/GITHUB2018/GIC/ENIGH2008/Nacional/No indigena")
 
 write.dbf(c_DECIL_ES,file = "Nacional Ingresos por fuente por DECIL estimaciones 2008 NO indigena.dbf")
 write.dbf(c_DECIL_SE,file = "Nacional Ingresos por fuente por DECIL errores standard 2008 NO indigena.dbf")
 write.dbf(c_DECIL_CV,file = "Nacional Ingresos por fuente por DECIL CV 2008 NO indigena.dbf")
 write.dbf(c_DECIL_LI,file = "Nacional Ingresos por fuente por DECIL LI 2008 NO indigena.dbf")
 write.dbf(c_DECIL_ES,file = "Nacional Ingresos por fuente por DECIL LS 2008 NO indigena.dbf")
+
