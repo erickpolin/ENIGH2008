@@ -63,7 +63,8 @@ row.names(prom_rub)<-Numdec
 
 prom_rub
 
-setwd("C:/Users/Erick/Dropbox/GIC/GITHUB2018/GIC/ENIGH2008/Nacional")
+setwd("C:/Users/Erick/Dropbox/GIC/GITHUB2018/GIC/ENIGH2008/Nacional/No indigena")
+
 
 write.dbf(prom_rub,file="Nacional ingresos por decil y GINI 2008 NO Indigena.dbf")
 
